@@ -1,11 +1,10 @@
 <?php
-require_once 'Zend/Loader/Autoloader.php';
-error_reporting(E_ALL);
+require_once 'Zend/Loader.php';
+Zend_Loader::registerAutoload();
 
-class MinhaClasse {
+class MinhaClasse implements Zend_Auth_Storage_Interface {
 
     public function __construct(){
-        Zend_Loader_Autoloader::getInstance();
 
         $auth  = Zend_Auth::getInstance();
 
@@ -44,6 +43,14 @@ class MinhaClasse {
         }
 
     }
+
+    public function isEmpty();
+
+    public function read();
+
+    public function write($contents);
+
+    public function clear();
 
 }
 
