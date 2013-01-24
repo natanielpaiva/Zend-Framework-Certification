@@ -5,14 +5,7 @@ error_reporting(E_ALL);
 class MinhaClasse {
 
     public function __construct(){
-
-        Zend_Loader::loadClass('Zend_Auth');
-        Zend_Loader::loadClass('Zend_Debug');
-        Zend_Loader::loadClass('Zend_Auth_Adapter_DbTable');
-        Zend_Loader::loadClass('Zend_Db_Adapter_Pdo_Mysql');
-        Zend_Loader::loadClass('Zend_Db');
-        Zend_Loader::loadClass('Zend_Session');
-
+        Zend_Loader_Autoloader::getInstance();
 
         $auth  = Zend_Auth::getInstance();
 
